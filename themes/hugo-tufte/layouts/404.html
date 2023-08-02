@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <div id="layout" class="pure-g">
+    <article class="pure-u-1">
+      {{ partial "brand.html" . }}
+      
+      <section><h2 id="title">Deepest apologies</h2><br/>
+        <p>Either this page has been moved or it never even existed.<p>
+        <p>If you arrived here via a link on <i>Clowes.org</i> then please <a href="mailto:elliot@clowes.me">email me</a> and let me know.</p>
+        <p>Either way, sorry again. And I guess you should just go back to <a href="https://clowes.org">the homepage</a>?<br/><br/></p>
+        <p><img src="/image/404.png"></p>
+      <section>
+        {{ partial "footer.html" . }}
+      </section>
+    </article>
+  </div>
+{{ end }}

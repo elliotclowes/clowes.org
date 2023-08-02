@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div id="layout" class="pure-g">
+  <article class="pure-u-1">
+    {{ partial "brand.html" . }}
+<section><p><span class="newthought">Hello there.</span> I'm Elliot Clowes and this is my little corner of the web.</p>
+
+<p>I do sometimes blog <a href="https://blot.blog/">here</a> and <a href="https://imlefthanded.com/">here</a>. But this is my homepage, where content is more <i>solid</i>.<label for="sidenote-d680e8a854a7cbad6d490c445cba2eba-1" class="margin-toggle sidenote-number"></label>
+<input type="checkbox" id="sidenote-d680e8a854a7cbad6d490c445cba2eba-1" class="margin-toggle" />
+<span class="sidenote">Though please note that this site is very much a <i>working</i> website. I am often updating and changing things. In many ways this is like a digital notebook. So things are often crossed out and altered. Please bare that in mind as you browse. If you see any errors or seemingly bare sections, that will be why.</span>
+</p>
+
+<h2 id="now-explore">Now explore!</h2>
+<ul>
+<li><a href="/about-me">About me</a></li>
+<li><a href="/book-notes">Books I've read</a></li>
+<li><a href="/tech-setup">My tech setup</a></li>
+<li><a href="/good-articles">Good articles from the web</a></li>
+<li><a href="/film-ratings">Film ratings</a></li>
+<li><a href="/cosy">Cosy cabins, rooms and houses in TV & film</a></li>
+</ul>
+</section>
+    {{ partial "footer.html" . }}
+  </article>
+</div>
+{{ end }}
