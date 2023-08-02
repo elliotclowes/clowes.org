@@ -1,0 +1,670 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Test</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 1500px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d8ab7514-7fc5-49e1-856d-e6ddb5275f9b" class="page sans"><header><h1 class="page-title">Test</h1></header><div class="page-body"><div id="5a6bca76-0455-4956-9b1f-a9856ef908ee" class="column-list"><div id="69889277-620e-4a93-8ac0-949ff9e18fde" style="width:20%" class="column"><h2 id="47070285-7406-47e7-90e2-a932ad069d01" class="">Screen 1</h2><ul id="2bdac253-276e-4599-9f47-f0a77f7b6195" class="bulleted-list"><li style="list-style-type:disc"><a href="https://mail.google.com/mail/u/0/#inbox">Gmail</a></li></ul><ul id="f580309e-3798-47b4-a8d8-5a61e5e82ad8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1XPfjzjvLJPXwVMFOqyk9H2oY6C8N-6dFnqpBDu0uxb8/edit#gid=511278339">Master Handover</a></li></ul><ul id="a0b2c822-1b2c-4d70-8130-74b54b23ae83" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1u6HfSxxPPkyQ5vNRNjWNre5bxSQGHY1A-CxTx8IN4zo/edit#gid=0">PTS Tracker</a></li></ul><ul id="2d694e6b-bd02-4d38-a352-f9591c2beda0" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1oGoATzFCrjYF6zNHN-RjpIeZR4W8SNsBEmcPjhOYIHc/edit#gid=2093985794">Redelivery Schedule</a></li></ul><ul id="e2e9cf86-3e1d-4b07-b47d-dc4012df1db4" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/17AL5jJ3kaCUUttcN-vYeYArlgPzqjnee4eePifpIKQU/edit#gid=373258690">Redelivery Availability</a></li></ul></div><div id="e504aa5f-14b2-4148-b388-e8807b5b9b1a" style="width:20%" class="column"><h2 id="f1d61ef4-5367-4095-be3f-d232263d3fd9" class="">Screen 2</h2><ul id="85bbcc4e-5639-42ce-8b6d-bb0fd792e05b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://hr.ocado.com/hr/com/ocado/bss/ec/employee/basicSearch.do">Ocado HR</a></li></ul><ul id="1ebcea5b-02a5-4cd4-ace2-3b6bb62cc495" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dispatch-intranet.ocado.com/maintain_cstm_assignment/unassignDrivers.action">Unassign Driver</a></li></ul><ul id="c072e04b-af78-4010-a1e6-03b7b8888a38" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dispatch-intranet.ocado.com/daily_route_report/">Daily Route Report</a></li></ul><ul id="21697326-2171-46e4-bd3c-a3f1e510c860" class="bulleted-list"><li style="list-style-type:disc"><a href="http://cstm-printing.ocado.com/cstm-printing/cstmManagerPrinting.jsp">CSTM Printing</a></li></ul><ul id="57f3de5e-be50-46eb-8be3-e84b4baeeda2" class="bulleted-list"><li style="list-style-type:disc"><a href="https://ocado.opentrk.com/group/report/9/">Asset Location</a></li></ul><ul id="cb033ba1-217f-4cbc-95e8-62c6ce069530" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dispatch-intranet.ocado.com/onroad_dashboard_webapp/actions/OnRoadBusinessDashboardAction.action">On-Road Business Dashboard</a></li></ul></div><div id="7d056e18-74fa-491f-ba7c-b07a5762cd60" style="width:20%" class="column"><h2 id="6e17797b-fbe8-46c3-ae3b-0bd541a231fb" class="">Sheets</h2><ul id="1ffe0efc-ab9d-40f2-b29f-17d8982c0e5b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1wRjY0AogGgXm9OQ4nXHssF3nQW4dI_DBaw1carSL_gU/edit#gid=1321013659">PDAIP</a></li></ul><ul id="79616404-53d8-491f-b52e-e2618a013b9d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1NhguqAECOTRyaffVxoGrSaSucs-e6oFYH6ec5vV5IEI/edit#gid=987806276">Leavers Tracker</a></li></ul><ul id="ab1ebaa3-3298-4887-953b-8d904994ce52" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1G8q5bSf22Ro35Y_YWNfhVcBeaLZ4SWecFHhErcGqP8k/edit#gid=1949028678">Uniform &amp; Boot Stock 2022</a></li></ul><ul id="01880f0a-c373-4706-ad45-389f9178a5a3" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1kDqt2RzU6rrQIEdE3FKUgAxaxD9p6R_HtVzsQaXP1yw/edit#gid=780075620">Hatfield Repeat Clock Failures 25/08-31/08</a></li></ul><ul id="bc7b488b-7d02-4c69-86db-e8bf4cdc2057" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1IVUPx8B8rivRbud2m8QpSRIJOaPJHZxeqaMOZsfui9g/edit#gid=615288936">Confirmed Site Support</a></li></ul><ul id="e09aa3d3-5605-4a7c-84dd-b514fb4a5d16" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1PiZdplWbfjkfj7D7A8cAVVzo6i-VGxmEbrfycHhefkE/edit#gid=1162547171">CSTM Potential / Actual New Starters Report 2022</a></li></ul><ul id="965bc2e9-6c1b-4a3e-8a07-f2883d6dd103" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1w2M8HDz705vVVga8NGUN_HeR9ISQ6bhgDdxTrZxQpF0/edit#gid=66147118">KPI Summary</a></li></ul><ul id="09dd2656-3438-4327-bb45-de3fd11b7188" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1te7GbAy6pkyHHoFLboNRvwJ2E_spK0oRQyt5ZN1qyzA/edit#gid=1243517237">Roster</a></li></ul><ul id="23224745-aaba-427b-8cfe-8f7f99244dc9" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1pTcCvlQj9w2GKuZWRNNKI68wYkX3fEi-4Z-4pPkYfW8/edit#gid=0">Clocking Failure Coaching Log</a></li></ul><ul id="60981a9b-a512-4bf2-8b97-a1f232f3af8e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1mMVMl5Hk2j1s83a1NLSFh69UpzDz9VOSioTXo1y3RpY/edit#gid=1234433037">Hatfield Spoke Onboarding Tracker</a></li></ul><ul id="318af8c6-68fc-4817-9c59-6f70e84e3a8c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1-N2RhMhD9JDKwXwVYCGRr1p3NkFh_LchzBB3-FdH1Kc/edit#gid=11">Incorrect Drop Times &amp; Geocode Issues</a></li></ul><ul id="f4dfb16e-a459-4e9a-a68c-7d2b8b1a7ea9" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1IVUPx8B8rivRbud2m8QpSRIJOaPJHZxeqaMOZsfui9g/edit#gid=297448350">Confirmed Site Support</a></li></ul><ul id="e0f607ee-a3b5-417c-b2f8-c2dc8f4475f6" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1JG9Ab4ATo00dDM8l5ma1kyr2_Tk4lJfhXvFu5NE70no/edit#gid=0">Marshalling focus topics</a></li></ul><ul id="ba1bae9e-09e8-43a4-9b30-830e59407a66" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1Rr-oKuLQy5jL5aadC4UVJyXb1Dxs3Cst/edit#gid=47256040">SSoW Sign off - Marshalls and CH</a></li></ul><ul id="2ef7ea1a-0a23-4045-a20f-38d1f7c867d7" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1vOfUEf35_gwTcpfqp6VOdRCLWFjLYfPpbDPtlMceCZU/edit#gid=224679800">Damaged &amp; Missing Tote Tracker</a></li></ul><ul id="2d1f6b95-8a41-4606-a2d3-3b4945d5d2fe" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/spreadsheets/d/1QblBzg5ANn5IRIrfIii1P78AUwk4cEA0BgaZVAYJ8sk/edit#gid=1055674772">Elevated Temps</a></li></ul></div><div id="9c5f279d-a8ed-4e50-9f45-e4fe1f94132f" style="width:20%" class="column"><h2 id="b75cb9ee-abb6-476e-a551-8f2bda9afcbe" class="">Intranet</h2><ul id="4953bc1a-d687-4351-88b2-a2b1b9f2d3d4" class="bulleted-list"><li style="list-style-type:disc">Ocado Intranet</li></ul><ul id="92f86321-a907-41bc-aa58-b800064963e5" class="bulleted-list"><li style="list-style-type:disc">YUZU - The TM Website - SD Van Team</li></ul><ul id="e76ea665-c11d-4095-af64-0600540f73c0" class="bulleted-list"><li style="list-style-type:disc">CFC1 Reporting Intranet</li></ul><ul id="0a315433-ba17-463c-812e-b865952c17ea" class="bulleted-list"><li style="list-style-type:disc">Absence Reports HR</li></ul><ul id="92e81c63-7334-4e22-bf89-d2277ec92967" class="bulleted-list"><li style="list-style-type:disc">Daily Adjustments Report</li></ul><ul id="80f69a02-8b99-49e7-9cd8-41f1313e2944" class="bulleted-list"><li style="list-style-type:disc">Display Shorts and Substitutes</li></ul><ul id="f357fd94-d309-44d1-9a91-4a130ce316a2" class="bulleted-list"><li style="list-style-type:disc">Driver Notes Updates</li></ul><ul id="5f65cca9-3a23-4c76-a744-2037052f2f86" class="bulleted-list"><li style="list-style-type:disc">Every Postcode For Every Drop</li></ul><ul id="22604613-451a-4434-b120-29fc08b76067" class="bulleted-list"><li style="list-style-type:disc">Find Route from Registration or CSTM</li></ul><ul id="4edd1814-d775-4dec-96cb-66e6ef4832a3" class="bulleted-list"><li style="list-style-type:disc">Frame/Dolly Marshalling Progress</li></ul><ul id="7f43a974-eb4b-40af-b621-7176b113979e" class="bulleted-list"><li style="list-style-type:disc">Override code</li></ul><ul id="e6b0aba0-7a7a-4022-90c7-e990b1ec1ff9" class="bulleted-list"><li style="list-style-type:disc">Order Window Violation Report</li></ul><ul id="5cd9ad46-05f1-4099-8cf6-16b05f654e32" class="bulleted-list"><li style="list-style-type:disc">Outbound Status (Route Status)</li></ul><ul id="57b34094-13e9-4e57-884a-90d5167c811c" class="bulleted-list"><li style="list-style-type:disc">VOR Dashboard</li></ul><ul id="832f94f1-0a3a-4497-af0a-1cff6e17d763" class="bulleted-list"><li style="list-style-type:disc">Tote Snapshot images</li></ul><ul id="81485691-f1bd-4846-9889-4465bde32145" class="bulleted-list"><li style="list-style-type:disc">Paperwork Regeneration</li></ul><ul id="a8b3b47f-c7e8-4176-b929-1a73403413ca" class="bulleted-list"><li style="list-style-type:disc">Suspended Orders</li></ul><ul id="643209bb-24bc-4d43-a045-284e63221a36" class="bulleted-list"><li style="list-style-type:disc">View/Change Dispatch Messages</li></ul><ul id="288e0140-d5d5-4d06-9f11-66e438d210e3" class="bulleted-list"><li style="list-style-type:disc">VARIOUS Reports</li></ul><ul id="cd23088e-2313-438a-997f-99f8a0546d3e" class="bulleted-list"><li style="list-style-type:disc">Order Window Violations</li></ul><ul id="f1a99e5f-8dc9-4452-9491-fc6515b8a915" class="bulleted-list"><li style="list-style-type:disc">Shift Summary Report</li></ul><ul id="80da20c6-6cf0-4797-a59d-337298e6074a" class="bulleted-list"><li style="list-style-type:disc">Route Completion</li></ul><ul id="4d49c304-09b6-4bcc-b72a-a26638376723" class="bulleted-list"><li style="list-style-type:disc">Postcodes On Routes</li></ul></div><div id="d2c0b7fa-eba8-4bf5-b68e-f56f8f51e663" style="width:20%" class="column"><h2 id="3fb5dd5d-a7fd-41bf-bd20-9e4a4f5179a3" class="">Forms</h2><ul id="af67e997-1e48-48f9-9d5e-7b955ec92ead" class="bulleted-list"><li style="list-style-type:disc">Pristine Selfie and TRACA form</li></ul><ul id="d71b3fc6-d6b2-40da-9f39-d826c2096cde" class="bulleted-list"><li style="list-style-type:disc">Road Disruptions Form</li></ul><ul id="1c0034b2-e87e-4c8d-8107-3c3b60ba3123" class="bulleted-list"><li style="list-style-type:disc">Flexible Working</li></ul><ul id="2327f9ad-d60b-4f0b-9e4e-39ababcfbc6c" class="bulleted-list"><li style="list-style-type:disc">Damaged Dolly Form</li></ul><ul id="14f3b8aa-5c8a-4ec8-8394-88a19344a38b" class="bulleted-list"><li style="list-style-type:disc">TM OT Form</li></ul><ul id="94f52ea4-65f6-4640-843e-ff9760e9e40f" class="bulleted-list"><li style="list-style-type:disc">Handscanning non-Compliance Informal Meeting Form</li></ul><ul id="9400e661-d5e0-4494-a622-f1343008a7bb" class="bulleted-list"><li style="list-style-type:disc">Time Management Booking Requests</li></ul><ul id="f86d7ffd-6559-43ae-8e43-5ef281e8b02c" class="bulleted-list"><li style="list-style-type:disc">Change Request for Exceptions Management</li></ul><ul id="6e876af9-4504-4f69-bf9f-5a3fb36d05a4" class="bulleted-list"><li style="list-style-type:disc">Stage 1 Attendance Management Procedure meeting</li></ul><ul id="42cd7051-7962-4f4e-9ecc-0b4d55e8e363" class="bulleted-list"><li style="list-style-type:disc">Stage 2 Attendance Management Procedure meeting</li></ul><ul id="623ebb98-0e4e-485a-b02b-0eb2e614e344" class="bulleted-list"><li style="list-style-type:disc">Recovery Forms</li></ul></div></div><div id="0895309d-00a3-4ef9-8227-10646e878828" class="column-list"><div id="10df2943-b0ee-4faf-8471-8f7e36bd7a13" style="width:20%" class="column"><h2 id="549a375b-d19c-4e14-bf90-573c71bf2989" class="">Guides/Info</h2><ul id="e9b0f220-dfa0-4928-b317-02690284e331" class="bulleted-list"><li style="list-style-type:disc">H&amp;S - YUZU</li></ul><ul id="c07dcf41-27bc-4448-8be6-6de35f3b311d" class="bulleted-list"><li style="list-style-type:disc">CSTM SSOW (Safe System of Work)</li></ul><ul id="a66ef312-3c33-4f7b-afe8-d117ab563c5c" class="bulleted-list"><li style="list-style-type:disc">Marshal SSOW (Safe System of Work)</li></ul><ul id="3756aaa5-741e-49c8-960f-e23c329aac82" class="bulleted-list"><li style="list-style-type:disc">Hatfield Site Phone Book</li></ul><ul id="204fb356-d5f0-4932-a726-baad197d9718" class="bulleted-list"><li style="list-style-type:disc">New Starter Training Routes Guide</li></ul><ul id="1389bea8-5253-4e62-963b-990fb7e82a3e" class="bulleted-list"><li style="list-style-type:disc">Printers for SD Hatfield Office</li></ul><ul id="8471b074-03e5-4fdf-b8fb-6bc1c1b718fc" class="bulleted-list"><li style="list-style-type:disc">Scan folder location</li></ul><ul id="a00addb6-ca4f-4838-974a-efb46c807098" class="bulleted-list"><li style="list-style-type:disc">Handscanning FAQs for Managers</li></ul><ul id="6d1d488c-36ea-4f24-bbae-0a7e2db82f4c" class="bulleted-list"><li style="list-style-type:disc">Fleet_Manual_V4.2</li></ul><ul id="9f41e8c5-cc60-45a4-b736-c0f9a04b10d5" class="bulleted-list"><li style="list-style-type:disc">Hatfield Important Phone Numbers</li></ul><ul id="8c2cb3ca-9e3b-4714-b652-52bf123b106f" class="bulleted-list"><li style="list-style-type:disc">Live Traffic Info</li></ul><ul id="b7935125-7498-448e-9225-2073af51f1d3" class="bulleted-list"><li style="list-style-type:disc">RDTM Workbook V1.0 (Responses)</li></ul><ul id="032c4a81-7fff-4eb9-96b8-eaaaf2b9ccbf" class="bulleted-list"><li style="list-style-type:disc">New CH Workbook - Google Drive</li></ul><ul id="b0b9a483-e086-4f5f-9728-1067a168c03f" class="bulleted-list"><li style="list-style-type:disc">AMP Stage 3 Script</li></ul><ul id="8727d644-679c-40b5-9c87-a1d5db29f53d" class="bulleted-list"><li style="list-style-type:disc">Disciplinary Procedure V2 29 9 2020</li></ul><ul id="3439309c-70f3-46aa-b35e-eba63fc38f6d" class="bulleted-list"><li style="list-style-type:disc">OL Manager Hub - People</li></ul><ul id="d67020dd-4ed2-4909-88fd-150151f22cc7" class="bulleted-list"><li style="list-style-type:disc">YUZU Folders - TMs</li></ul><ul id="1fac2488-bf88-43e0-9f05-05ca379e7fd1" class="bulleted-list"><li style="list-style-type:disc">Payroll Help Portal</li></ul><ul id="3e938a66-dafe-4fd1-8c42-0317345d2eb7" class="bulleted-list"><li style="list-style-type:disc">Due Dilligence folders</li></ul><ul id="83c3fd4f-c719-4c72-95d0-28776f40a7c5" class="bulleted-list"><li style="list-style-type:disc">In the Event of a Fire</li></ul><ul id="9a733531-0c74-4742-8d88-e406365d52f5" class="bulleted-list"><li style="list-style-type:disc">Assessnet PAI&#x27;s Guide</li></ul><ul id="9190119c-55e8-4474-b641-c546ba44d6e9" class="bulleted-list"><li style="list-style-type:disc">Absence Procedure (area coordinators) -V1.1</li></ul><ul id="68d44372-1c86-41e1-aabb-41e4d9022896" class="bulleted-list"><li style="list-style-type:disc">Adoption Leave</li></ul><ul id="162a4f7b-e7ad-43c3-89f6-518d14c57633" class="bulleted-list"><li style="list-style-type:disc">Alcohol, Drug and Substance Misuse Policy</li></ul></div><div id="08eb7acf-1647-4f67-a51d-5c4b88dae52d" style="width:20%" class="column"><h2 id="cab1dc23-640d-4ccb-82d5-d3ebfd8ff81a" class="">More</h2><ul id="16f1afcc-b56b-45d4-9bcf-f129ae2d99c1" class="bulleted-list"><li style="list-style-type:disc">RDTM</li></ul><ul id="75524cc8-4a2c-4078-a5b8-1f4753c62998" class="bulleted-list"><li style="list-style-type:disc">Google Drive</li></ul><ul id="a56b3cde-fa2c-46c1-86e0-1736591ae882" class="bulleted-list"><li style="list-style-type:disc">Calendar</li></ul><ul id="6dbde324-b02f-4545-9d0d-59a729c8becc" class="bulleted-list"><li style="list-style-type:disc">Hatfield SD Drive</li></ul><ul id="4d7a60a2-62e0-4ba7-950f-3a9e4648a728" class="bulleted-list"><li style="list-style-type:disc">Google Maps</li></ul><ul id="386526c9-6d5a-424b-bd5b-2ea0208f0b5d" class="bulleted-list"><li style="list-style-type:disc">Google Keep</li></ul><ul id="19f6700f-2acd-43b5-85fe-97b2598787de" class="bulleted-list"><li style="list-style-type:disc">Todoist</li></ul><ul id="6f8cafda-4944-4646-b4c4-d5fbf03174f6" class="bulleted-list"><li style="list-style-type:disc">RouteXL</li></ul><ul id="98bc9e02-1aa3-4428-9d9d-f568fd2960c9" class="bulleted-list"><li style="list-style-type:disc">Benefits+</li></ul><ul id="b776da76-7dbc-4f0b-98d3-51c7e7d759af" class="bulleted-list"><li style="list-style-type:disc">AllStars | OneHub</li></ul><ul id="b0e9fad6-ab37-4ba8-b6c9-3a553262b01e" class="bulleted-list"><li style="list-style-type:disc">Drive storage</li></ul><ul id="502e6fa0-f231-4837-8d72-59f903a4710b" class="bulleted-list"><li style="list-style-type:disc">Traffic Cameras</li></ul></div><div id="1de2385c-d8f6-407e-8cd6-53612998420b" style="width:20%" class="column"><h2 id="bb2fd6c9-8124-4e07-ae9b-20061d61d6ba" class="">Temp</h2><ul id="5112d6fe-6015-4492-b84b-690e9b9321bc" class="bulleted-list"><li style="list-style-type:disc">Ticksheet</li></ul><ul id="2191e02a-792c-411d-9340-7454c7519b1b" class="bulleted-list"><li style="list-style-type:disc">Site Support</li></ul><ul id="a300b3fe-7b79-4749-819f-6181fe9c4130" class="bulleted-list"><li style="list-style-type:disc">Datalogger Fridge Temps</li></ul><ul id="4de4762a-ad00-4f3f-af54-c89ce2a061bf" class="bulleted-list"><li style="list-style-type:disc">SSOW sign off for the PM shift 28.09-Almost all marshall/CH</li></ul></div><div id="25570fb1-c880-4e83-8857-360514063f29" style="width:20%" class="column"><h2 id="7f9094b6-6679-4ed5-b342-ef0f38690f53" class="">Blank</h2></div><div id="d81a2b04-dc34-4c92-983d-a4574522971a" style="width:20%" class="column"><h2 id="fc983456-96ee-4da7-9543-bf16717a3df3" class="">Blank</h2><p id="aebd5489-25b5-4a1f-8dec-49cae439c4cd" class="">
+</p></div></div></div></article></body></html>
